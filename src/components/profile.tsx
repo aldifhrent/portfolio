@@ -1,6 +1,5 @@
 import { FaLocationDot } from "react-icons/fa6";
 import HyperText from "./magicui/hyper-text";
-import { Dot } from "lucide-react";
 export default function Profile() {
   return (
     <section className="xl:py-12">
