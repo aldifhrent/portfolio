@@ -1,45 +1,30 @@
-import Image from "next/image";
-import Link from "next/link";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import HyperText from "./magicui/hyper-text";
+import { Dot } from "lucide-react";
 export default function Profile() {
   return (
-    <div className="flex flex-col items-center justify-center mx-auto h-1/2 ">
-      <Image
-        src="https://avatars.githubusercontent.com/u/102520149?s=400&u=34357956c29fea3c51a46333551d2e5252d4e54f&v=4"
-        alt="Github Image Profile"
-        width={100}
-        height={100}
-        className="rounded-full"
-      />
-      <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mt-2  dark:text-white">
-        Aldi Ahmad Fahrizi Ilmawan
-      </h1>
-      <p className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-sm mt-4 cursor-pointer font-semibold outline outline-2  outline-offset-2">
-        Front End Developer
-      </p>
-      <div className="flex gap-5 mt-4">
-        <Link
-          href="https://instagram.com/aldifhrent"
-          target="_blank"
-          className="bg-black dark:bg-white size-8 flex items-center justify-center rounded-full "
-        >
-          <FaInstagram className="size-5 text-white dark:text-black" />
-        </Link>
-        <Link
-          href="https://github.com/aldifhrent"
-          target="_blank"
-          className="bg-black dark:bg-white size-8 flex items-center justify-center rounded-full "
-        >
-          <FaGithub className="size-5 text-white dark:text-black" />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/aldiahmadfahriziilmawan/"
-          target="_blank"
-          className="bg-black dark:bg-white size-8 flex items-center justify-center rounded-full "
-        >
-          <FaLinkedin className="size-5 text-white dark:text-black" />
-        </Link>
+    <section className="xl:py-12">
+      <div className="container mx-auto">
+        <HyperText
+          className="text-2xl md:text-3xl xl:text-5xl  text-center mt-2  dark:text-white font-extrabold "
+          text="Aldi Ahmad Fahrizi Ilmawan"
+          duration={500}
+          animateOnLoad={true}
+        />
+        <p className="text-sm font-semibold">Front End Developer</p>
+
+        <p className="mt-4 text-sm md:text-md">Probably Nothing</p>
+        <div className="flex flex-col md:flex-row  items-start gap-4 mt-4">
+          <div className="flex gap-1 items-center">
+            <FaLocationDot />
+            Cilacap
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="bg-green-300 w-2 h-2 rounded-full animate-blink"></div>
+            <span>Available for work</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

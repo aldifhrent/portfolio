@@ -1,8 +1,9 @@
 "use client";
 
+import { AtSign, BriefcaseBusiness, FolderClosed } from "lucide-react";
 import { useTheme } from "next-themes";
-import { FaMoon } from "react-icons/fa";
-import { IoMdSunny } from "react-icons/io";
+import Link from "next/link";
+
 export default function Header() {
   const { theme, setTheme } = useTheme();
 
@@ -12,28 +13,31 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 right-0 p-4">
-      <div className="flex items-center space-x-4">
-        <button
-          className={`flex items-center justify-center w-10 h-10 rounded-full  shadow-lg ${
-            theme === "dark" ? "bg-white" : "bg-black"
-          }`}
-          onClick={handleThemeToggle}
-        >
-          {theme === "dark" ? (
-            <FaMoon
-              className={`size-5 ${
-                theme === "dark" ? "text-black" : "text-white"
-              } rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100`}
-            />
-          ) : (
-            <IoMdSunny
-              className={`size-5 ${
-                theme === "dark" ? "text-black" : "text-white"
-              } rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0`}
-            />
-          )}
-        </button>
+    <header className="sticky h-16 flex justify-evenly mt-8 xl:mt-0">
+      <div className="container flex justify-between items-center ">
+        <div className="flex flex-col gap-2">
+          <Link
+            href="/portfolio"
+            className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-500"
+          >
+            <FolderClosed className="w-5 h-5" />
+            projects
+          </Link>
+          <Link
+            href="/portfolio"
+            className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-500"
+          >
+            <BriefcaseBusiness className="w-5 h-5" />
+            work
+          </Link>
+          <Link
+            href="/portfolio"
+            className="flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer"
+          >
+            <AtSign className="size-5" />
+            contact
+          </Link>
+        </div>
       </div>
     </header>
   );
