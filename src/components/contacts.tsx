@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Contacts() {
   return (
     <section className="mt-12" id="contact">
-      <div className="container">
+      <div className="container mx-auto">
         <h1 className="text-lg font-bold">Contacts</h1>
         <div className="flex flex-col mt-4 gap-4">
           <div className="flex items-center">
