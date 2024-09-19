@@ -1,36 +1,59 @@
 "use client";
 
+import { useAnimation, motion } from "framer-motion";
 import { AtSign, BriefcaseBusiness, FolderClosed } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
+  const controls = useAnimation();
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      controls.start({
+        y: element.offsetTop,
+        transition: { duration: 0.8, ease: "easeInOut" },
+      });
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <header className="sticky h-16 flex justify-evenly mt-8 xl:mt-0">
+    <motion.header
+      className="sticky h-16 flex justify-evenly mt-8 xl:mt-0"
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
       <div className="container flex justify-between items-center ">
         <div className="flex flex-col gap-2">
-          <Link
-            href="/portfolio"
-            className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-500"
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleScroll("projects")}
+            className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer"
           >
             <FolderClosed className="w-5 h-5" />
             projects
-          </Link>
-          <Link
-            href="/portfolio"
-            className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-500"
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleScroll("work")}
+            className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer"
           >
             <BriefcaseBusiness className="w-5 h-5" />
             work
-          </Link>
-          <Link
-            href="/portfolio"
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleScroll("contact")}
             className="flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer"
           >
             <AtSign className="size-5" />
             contact
-          </Link>
+          </motion.button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

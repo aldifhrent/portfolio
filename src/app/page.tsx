@@ -1,4 +1,6 @@
+import Certificate from "@/components/certificate";
 import Contacts from "@/components/contacts";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Profile from "@/components/profile";
 import Projects from "@/components/projects";
@@ -13,7 +15,9 @@ export default function Home() {
       <Header />
       <Projects />
       <Work />
+      <Certificate />
       <Contacts />
+      <Footer />
     </main>
   );
 }

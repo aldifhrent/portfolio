@@ -1,6 +1,6 @@
 export default function Work() {
   return (
-    <section className="mt-12">
+    <section className="mt-12" id="work">
       <div className="container mx-auto">
         <h1 className="text-md font-semibold">Work Experience</h1>
         <div className="flex flex-col mt-6 gap-y-6">
