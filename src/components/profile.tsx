@@ -5,7 +5,7 @@ export default function Profile() {
     <section className="xl:py-12">
       <div className="container mx-auto">
         <HyperText
-          className="text-2xl md:text-3xl xl:text-5xl  text-center mt-2  dark:text-white font-extrabold "
+          className="text-lg md:text-2xl xl:text-4xl  text-center mt-2  dark:text-white font-extrabold "
           text="Aldi Ahmad Fahrizi Ilmawan"
           duration={500}
           animateOnLoad={true}

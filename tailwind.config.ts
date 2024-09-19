@@ -12,9 +12,9 @@ const config = {
   theme: {
     container: {
       padding: {
-        DEFAULT: "1rem",
-        sm: "12rem",
-        lg: "14rem",
+        DEFAULT: "8rem",
+        sm: "8rem",
+        lg: "8rem",
         xl: "15rem",
         "2xl": "24rem",
       },
