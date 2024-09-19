@@ -12,7 +12,7 @@ const projectsData = [
     websiteLink: "https://portfolio-slicing.vercel.app/",
   },
   {
-    title: "Landing Page",
+    title: "Landing Page Slicing",
     date: 2024,
     description:
       "slicing landing page designs and designs obtained from the figma community using nextjs, tailwindcss and framer motion.",
@@ -77,6 +77,7 @@ function ProjectCard({ title, date, description, websiteLink }: ProjectProps) {
         {description}
       </p>
       <Link
+        target="_blank"
         href={websiteLink || ""}
         className="mt-2 text-md hover:underline hover:cursor-pointer"
       >

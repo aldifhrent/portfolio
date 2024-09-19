@@ -12,7 +12,10 @@ export default function Profile() {
         />
         <p className="text-sm font-semibold">Front End Developer</p>
 
-        <p className="mt-4 text-sm md:text-md">Probably Nothing</p>
+        <p className="mt-4 text-sm md:text-md">
+          I'm front-end developer who loves turning code into beautiful,
+          responsive websites.
+        </p>
         <div className="flex flex-col md:flex-row  items-start gap-4 mt-4">
           <div className="flex gap-1 items-center">
             <FaLocationDot />
