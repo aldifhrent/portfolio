@@ -18,7 +18,7 @@ function WorkCard() {
         <h1 className="text-md">Puskomedia Indonesia Kreatif</h1>
         <h2 className="text-sm text-muted-foreground">Web Developer Intern</h2>
         <ul className="ml-8 mt-2 max-w-lg">
-          <li className="list-disc text-sm">
+          <li className="list-disc text-sm md:text-lg">
             Membuat fitur geolokasi dengan peta data wilayah pada website Panda
             SID (Sistem Informasi Desa) menggunakan framework Code Igniter
           </li>
