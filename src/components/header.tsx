@@ -1,7 +1,7 @@
 "use client";
 
 import { useAnimation, motion } from "framer-motion";
-import { AtSign, BriefcaseBusiness, FolderClosed, Rss } from "lucide-react";
+import { AtSign, BriefcaseBusiness, FolderClosed } from "lucide-react";
 
 export default function Header() {
   const controls = useAnimation();
@@ -42,15 +42,15 @@ export default function Header() {
             <BriefcaseBusiness className="w-5 h-5" />
             work
           </motion.button>
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             // onClick={() => handleScroll("work")}
             className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer"
           >
             <Rss className="w-5 h-5" />
-            post
-          </motion.button>
+            posts
+          </motion.button> */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}

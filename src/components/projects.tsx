@@ -21,7 +21,7 @@ const projectsData = [
 ];
 export default function Projects() {
   return (
-    <section className="mt-8 " id="projects">
+    <section className="mt-12 " id="projects">
       <div className="container mx-auto justify-center flex flex-col">
         <h1 className="text-md font-semibold ">Projects</h1>
         <div className="flex flex-col gap-y-8 mt-4">

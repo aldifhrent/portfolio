@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function PostPage() {
   return (
     <section className="">
-      <div className="container">
+      <div className="container mx-auto">
         <h1 className="text-md font-semibold">Posts</h1>
         <div className="grid grid-cols-1 md:grid-cols-2  mt-8 items-center">
           <PostCard
@@ -21,17 +23,18 @@ interface PostCardProps {
   title: string;
   description: string;
 }
+
 function PostCard({ imageUrl, title, description }: PostCardProps) {
   return (
     <div className="p-6 flex flex-col items-center justify-center">
       <div className="w-fit border dark:border-white rounded-lg h-fit">
         <div className="flex items-center justify-center">
-          <img
-            src="https://fahrezi.fyi/_next/image?url=%2Fimg%2Fhow-to-get-10k-free-credits-from-aws.webp&w=750&q=75"
+          <Image
+            src="https://placehold.co/400x100"
             alt=""
-            width={260}
-            height={100}
-            className="rounded-t-lg"
+            width={400}
+            height={200}
+            className="rounded-t-lg max-w-none"
           />
         </div>
         <div className="p-4">
