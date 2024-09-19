@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DM_Mono } from "next/font/google";
 import TopMenu from "@/components/top-menu";
+import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: "Aldi Ahmad Fahrizi Ilmawan | Portfolio",
 };
@@ -22,6 +23,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           <TopMenu />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

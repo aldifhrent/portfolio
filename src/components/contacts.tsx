@@ -1,7 +1,27 @@
+"use client";
+
+import { useToast } from "@/hooks/use-toast";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Contacts() {
+  const { toast } = useToast();
+
+  const handleCopy = () => {
+    const email = "aldiahmadfahriziilmawan@gmail.com";
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        toast({
+          title: "Copied to clipboard",
+          description: email,
+        });
+      })
+      .catch((err) => {
+        console.error("Failed to copy email: ", err);
+      });
+  };
+
   return (
     <section className="mt-12" id="contact">
       <div className="container mx-auto">
@@ -10,7 +30,10 @@ export default function Contacts() {
           <div className="flex items-center">
             <p className="flex-shrink-0">Email</p>
             <hr className="flex-grow border-gray-300 mx-2" />
-            <p className="flex items-center pl-4 hover:underline hover:cursor-pointer">
+            <p
+              className="flex items-center pl-4 hover:underline hover:cursor-pointer"
+              onClick={handleCopy}
+            >
               aldiahmadfahriziilmawan@gmail.com <ChevronRight />
             </p>
           </div>
