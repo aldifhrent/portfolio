@@ -13,12 +13,23 @@ export default function Work() {
 
 function WorkCard() {
   return (
-    <div className="flex justify-between items-center ">
-      <div>
+    <div className="flex justify-between">
+      <div className="flex flex-col">
         <h1 className="text-md">Puskomedia Indonesia Kreatif</h1>
         <h2 className="text-sm text-muted-foreground">Web Developer Intern</h2>
+        <ul className="ml-8 mt-2 max-w-lg">
+          <li className="list-disc">
+            Membuat fitur geolokasi dengan peta data wilayah pada website Panda
+            SID (Sistem Informasi Desa) menggunakan framework Code Igniter
+          </li>
+          <li className="list-disc">
+            Memperbaiki query database pada fitur PKH (Program Keluarga Harapan)
+            dengan SQL dan menampilkan data dari database dalam bentuk grafik
+            menggunakan laravel dan highcharts.
+          </li>
+        </ul>
       </div>
-      <p>Aug 2022 - Sep 2022</p>
+      <p className="items-start">Aug 2022 - Sep 2022</p>
     </div>
   );
 }

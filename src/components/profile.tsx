@@ -2,7 +2,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import HyperText from "./magicui/hyper-text";
 export default function Profile() {
   return (
-    <section className="xl:py-12">
+    <section>
       <div className="container mx-auto">
         <HyperText
           className="text-lg md:text-2xl xl:text-4xl  text-center mt-2  dark:text-white font-extrabold "

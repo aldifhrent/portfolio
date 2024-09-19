@@ -10,8 +10,9 @@ export default function Home() {
     <main>
       <Profile />
       <Header />
-      <Projects />
       <Work />
+      <Projects />
+
       <Contacts />
       <Footer />
     </main>

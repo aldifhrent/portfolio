@@ -13,9 +13,7 @@ const config = {
     container: {
       padding: {
         DEFAULT: "1rem",
-        sm: "14rem",
-        lg: "15rem",
-        xl: "15rem",
+        md: "14rem",
         "2xl": "24rem",
       },
     },

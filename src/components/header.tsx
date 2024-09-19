@@ -17,7 +17,7 @@ export default function Header() {
   };
   return (
     <motion.header
-      className="sticky h-16 flex justify-evenly mt-8 xl:mt-0"
+      className="sticky h-16 flex justify-evenly mt-12"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -40,7 +40,7 @@ export default function Header() {
             className="group flex items-center gap-1 text-md hover:font-semibold hover:underline cursor-pointer"
           >
             <BriefcaseBusiness className="w-5 h-5" />
-            work
+            work experience
           </motion.button>
           {/* <motion.button
             whileHover={{ scale: 1.1 }}
