@@ -2,7 +2,6 @@
 
 import { useAnimation, motion } from "framer-motion";
 import { AtSign, BriefcaseBusiness, FolderClosed } from "lucide-react";
-import Link from "next/link";
 
 export default function Header() {
   const controls = useAnimation();

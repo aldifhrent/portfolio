@@ -27,6 +27,7 @@ export default function Projects() {
         <div className="flex flex-col gap-y-8 mt-4">
           {projectsData.map((project, index) => (
             <motion.div
+              key={index}
               initial={{
                 opacity: 0,
                 y: 24,
@@ -44,7 +45,6 @@ export default function Projects() {
               }}
             >
               <ProjectCard
-                key={index}
                 title={project.title}
                 date={project.date}
                 description={project.description}
