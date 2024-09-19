@@ -18,18 +18,18 @@ function WorkCard() {
         <h1 className="text-md">Puskomedia Indonesia Kreatif</h1>
         <h2 className="text-sm text-muted-foreground">Web Developer Intern</h2>
         <ul className="ml-8 mt-2 max-w-lg">
-          <li className="list-disc">
+          <li className="list-disc text-sm">
             Membuat fitur geolokasi dengan peta data wilayah pada website Panda
             SID (Sistem Informasi Desa) menggunakan framework Code Igniter
           </li>
-          <li className="list-disc">
+          <li className="list-disc text-sm md:text-lg">
             Memperbaiki query database pada fitur PKH (Program Keluarga Harapan)
             dengan SQL dan menampilkan data dari database dalam bentuk grafik
             menggunakan laravel dan highcharts.
           </li>
         </ul>
       </div>
-      <p className="items-start">Aug 2022 - Sep 2022</p>
+      <p>Aug 2022 - Sep 2022</p>
     </div>
   );
 }
