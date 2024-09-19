@@ -1,17 +1,9 @@
 "use client";
 
 import { AtSign, BriefcaseBusiness, FolderClosed } from "lucide-react";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 
 export default function Header() {
-  const { theme, setTheme } = useTheme();
-
-  // Toggle between dark and light theme
-  const handleThemeToggle = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   return (
     <header className="sticky h-16 flex justify-evenly mt-8 xl:mt-0">
       <div className="container flex justify-between items-center ">
