@@ -3,6 +3,7 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie"; // Import js-cookie
 
 const TopMenu = () => {
   const { setTheme, resolvedTheme } = useTheme();
@@ -11,13 +12,20 @@ const TopMenu = () => {
   // Ensure theme is loaded before rendering to avoid hydration mismatches
   useEffect(() => {
     setMounted(true);
-  }, []);
+    // Check if a theme preference is stored in cookies
+    const storedTheme = Cookies.get("theme");
+    if (storedTheme) {
+      setTheme(storedTheme); // Set theme based on cookie value
+    }
+  }, [setTheme]);
 
   // If not mounted, don't render anything (prevents flashing)
   if (!mounted) return null;
 
   const handleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    const newTheme = resolvedTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    Cookies.set("theme", newTheme); // Save the new theme in cookies
   };
 
   return (
