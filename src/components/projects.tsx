@@ -5,18 +5,25 @@ import { motion } from "framer-motion";
 
 const projectsData = [
   {
-    title: "Portfolio Slicing",
+    title: "Portfolio Landing Page Slicing",
     date: 2024,
     description:
       "slicing the portfolio landing page with the design obtained from the figma community and slicing using nextjs, tailwindcss and also framer motion.",
-    websiteLink: "https://portfolio-slicing.vercel.app/",
+    websiteLink: "https://portfolio-slicing.vercel.app",
   },
   {
     title: "Landing Page Slicing",
     date: 2024,
     description:
       "slicing landing page designs and designs obtained from the figma community using nextjs, tailwindcss and framer motion.",
-    websiteLink: "https://landingpage-slicing.vercel.app/",
+    websiteLink: "https://interior-slicing.vercel.app",
+  },
+  {
+    title: "Interior Landing Page Slicing",
+    date: 2024,
+    description:
+      "slicing interior landing page designs and designs obtained from the figma community using nextjs, tailwindcss",
+    websiteLink: "https://landingpage-slicing.vercel.app",
   },
 ];
 export default function Projects() {
