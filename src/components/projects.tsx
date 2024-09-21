@@ -23,7 +23,7 @@ const projectsData = [
     date: 2024,
     description:
       "slicing interior landing page designs and designs obtained from the figma community using nextjs, tailwindcss",
-    websiteLink: "https://landingpage-slicing.vercel.app",
+    websiteLink: "https://interior-slicing.vercel.app",
   },
 ];
 export default function Projects() {
