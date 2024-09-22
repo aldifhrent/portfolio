@@ -12,6 +12,7 @@ const DMMono = DM_Mono({
   subsets: ["latin"],
   weight: "400",
 });
+
 export default function RootLayout({
   children,
 }: Readonly<{
