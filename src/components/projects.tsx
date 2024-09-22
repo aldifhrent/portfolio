@@ -10,20 +10,23 @@ const projectsData = [
     description:
       "slicing the portfolio landing page with the design obtained from the figma community and slicing using nextjs, tailwindcss and also framer motion.",
     websiteLink: "https://portfolio-slicing.vercel.app",
+    repository: "https://github.com/aldifhrent/portfolio-slicing",
   },
   {
     title: "Landing Page Slicing",
     date: 2024,
     description:
       "slicing landing page designs and designs obtained from the figma community using nextjs, tailwindcss and framer motion.",
-    websiteLink: "https://interior-slicing.vercel.app",
+    websiteLink: "https://landingpage-slicing.vercel.app/",
+    repository: "https://github.com/aldifhrent/landingpage-slicing",
   },
   {
     title: "Interior Landing Page Slicing",
     date: 2024,
     description:
       "slicing interior landing page designs and designs obtained from the figma community using nextjs, tailwindcss",
-    websiteLink: "https://landingpage-slicing.vercel.app",
+    websiteLink: "https://interior-slicing.vercel.app/",
+    repository: "https://github.com/aldifhrent/interior-slicing",
   },
 ];
 export default function Projects() {
@@ -56,6 +59,7 @@ export default function Projects() {
                 date={project.date}
                 description={project.description}
                 websiteLink={project.websiteLink}
+                repository={project.repository}
               />
             </motion.div>
           ))}
@@ -70,8 +74,15 @@ interface ProjectProps {
   date: number;
   description?: string;
   websiteLink?: string;
+  repository?: string;
 }
-function ProjectCard({ title, date, description, websiteLink }: ProjectProps) {
+function ProjectCard({
+  title,
+  date,
+  description,
+  websiteLink,
+  repository,
+}: ProjectProps) {
   return (
     <div className="flex flex-col">
       <div className="flex items-center gap-4">
@@ -83,13 +94,22 @@ function ProjectCard({ title, date, description, websiteLink }: ProjectProps) {
       <p className="text-sm mt-2 md:text-md text-muted-foreground text-justify">
         {description}
       </p>
-      <Link
-        target="_blank"
-        href={websiteLink || ""}
-        className="mt-2 text-md hover:underline hover:cursor-pointer"
-      >
-        Link Website
-      </Link>
+      <div className="flex items-center gap-x-4">
+        <Link
+          target="_blank"
+          href={websiteLink || ""}
+          className="mt-2 text-md hover:underline hover:cursor-pointer"
+        >
+          Link Website
+        </Link>
+        <Link
+          target="_blank"
+          href={repository || ""}
+          className="mt-2 text-md hover:underline hover:cursor-pointer"
+        >
+          Repository
+        </Link>
+      </div>
     </div>
   );
 }

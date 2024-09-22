@@ -22,7 +22,7 @@ export default function Profile() {
             Cilacap
           </div>
           <div className="flex items-center gap-1">
-            <div className="bg-green-300 w-2 h-2 rounded-full animate-blink"></div>
+            <div className="bg-green-300 size-2 rounded-full animate-blink"></div>
             <span>Available for work</span>
           </div>
         </div>

@@ -49,6 +49,17 @@ export default function Contacts() {
             </Link>
           </div>
           <div className="flex items-center">
+            <p className="flex-shrink-0">CV</p>
+            <hr className="flex-grow border-gray-300 mx-2" />
+            <Link
+              href="/Aldi-CV.pdf"
+              className="flex items-center pl-4 hover:underline"
+              target="_blank"
+            >
+              CV Aldi Ahmad Fahrizi Ilmawan <ChevronRight />
+            </Link>
+          </div>
+          <div className="flex items-center">
             <p className="flex-shrink-0">Linkedin</p>
             <hr className="flex-grow border-gray-300 mx-2" />
             <Link
