@@ -4,14 +4,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { DM_Mono } from "next/font/google";
 import TopMenu from "@/components/top-menu";
 import { Toaster } from "@/components/ui/toaster";
+import { DMMono } from "@/lib/font";
 export const metadata: Metadata = {
   title: "Aldi Ahmad Fahrizi Ilmawan | Portfolio",
 };
-
-const DMMono = DM_Mono({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export default function RootLayout({
   children,
