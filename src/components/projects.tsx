@@ -4,22 +4,22 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const projectsData = [
-  {
-    title: "Portfolio Landing Page Slicing",
-    date: 2024,
-    description:
-      "slicing the portfolio landing page with the design obtained from the figma community and slicing using nextjs, tailwindcss and also framer motion.",
-    websiteLink: "https://portfolio-slicing.vercel.app",
-    repository: "https://github.com/aldifhrent/portfolio-slicing",
-  },
-  {
-    title: "Landing Page Slicing",
-    date: 2024,
-    description:
-      "slicing landing page designs and designs obtained from the figma community using nextjs, tailwindcss and framer motion.",
-    websiteLink: "https://landingpage-slicing.vercel.app",
-    repository: "https://github.com/aldifhrent/landingpage-slicing",
-  },
+  // {
+  //   title: "Portfolio Landing Page Slicing",
+  //   date: 2024,
+  //   description:
+  //     "slicing the portfolio landing page with the design obtained from the figma community and slicing using nextjs, tailwindcss and also framer motion.",
+  //   websiteLink: "https://portfolio-slicing.vercel.app",
+  //   repository: "https://github.com/aldifhrent/portfolio-slicing",
+  // },
+  // {
+  //   title: "Landing Page Slicing",
+  //   date: 2024,
+  //   description:
+  //     "slicing landing page designs and designs obtained from the figma community using nextjs, tailwindcss and framer motion.",
+  //   websiteLink: "https://landingpage-slicing.vercel.app",
+  //   repository: "https://github.com/aldifhrent/landingpage-slicing",
+  // },
   {
     title: "Interior Landing Page Slicing",
     date: 2024,
