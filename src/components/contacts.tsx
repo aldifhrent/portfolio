@@ -25,7 +25,9 @@ export default function Contacts() {
   return (
     <section className="mt-12" id="contact">
       <div className="container mx-auto">
-        <h1 className="text-lg font-bold">Contacts</h1>
+        <h1 className="text-lg font-bold p-[2px] rounded-xs  w-fit">
+          Contacts
+        </h1>
         <div className="flex flex-col mt-4 gap-4">
           <div className="flex items-center">
             <p className="flex-shrink-0">Email</p>
@@ -46,17 +48,6 @@ export default function Contacts() {
               target="_blank"
             >
               @aldifhrent <ChevronRight />
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <p className="flex-shrink-0">CV</p>
-            <hr className="flex-grow border-gray-300 mx-2" />
-            <Link
-              href="/Aldi-CV.pdf"
-              className="flex items-center pl-4 hover:underline"
-              target="_blank"
-            >
-              CV Aldi Ahmad Fahrizi Ilmawan <ChevronRight />
             </Link>
           </div>
           <div className="flex items-center">
