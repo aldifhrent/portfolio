@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
-import Cookies from "js-cookie";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 const Menu = () => {
@@ -20,10 +19,6 @@ const Menu = () => {
 
   useEffect(() => {
     setMounted(true);
-    const storedTheme = Cookies.get("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-    }
   }, [setTheme]);
 
   if (!mounted) return null;
@@ -31,19 +26,8 @@ const Menu = () => {
   const handleTheme = () => {
     const newTheme = resolvedTheme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    Cookies.set("theme", newTheme);
   };
 
-  const handleScroll = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      controls.start({
-        y: element.offsetTop,
-        transition: { duration: 0.8, ease: "easeInOut" },
-      });
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <section className="mt-12 max-w-screen">
       <div className="container mx-auto">
@@ -73,7 +57,7 @@ const Menu = () => {
           >
             <Link
               href="/Aldi-CV.pdf"
-              className="flex items-center hover:underline space-x-1 hover:bg-gray-100 black  rounded-full p-1"
+              className="p-2 flex items-center hover:underline space-x-1 hover:bg-gray-700 black  rounded-full"
             >
               <Download className="size-5" />
             </Link>

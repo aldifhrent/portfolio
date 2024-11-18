@@ -87,7 +87,7 @@ function ProjectCard({
   return (
     <Card className="relative flex w-fit shadow-lg bg-white dark:bg-black dark:border-white border-[2px]">
       {/* Clone Effect */}
-      <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 border border-red-100 opacity-40 rounded-lg"></div>
+      <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 border border-white opacity-40 rounded-lg"></div>
 
       <div className="flex flex-col gap-4">
         <Image src={image} alt={`${title} Project`} className="w-full" />
