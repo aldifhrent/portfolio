@@ -6,7 +6,7 @@ export default function Profile() {
     <section>
       <TopMenu />
       <div className="container mx-auto mt-8">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col">
           <HyperText
             className="text-lg md:text-2xl xl:text-4xl  text-center mt-2  dark:text-white font-extrabold "
             text="Aldi Ahmad Fahrizi Ilmawan"
@@ -21,7 +21,7 @@ export default function Profile() {
           <div className="flex flex-col md:flex-row  items-start gap-4 mt-4">
             <div className="flex items-center gap-1">
               <div className="bg-green-300 size-2 rounded-full animate-blink"></div>
-              <span>Available for work</span>
+              <span>available for work</span>
             </div>
           </div>
         </div>

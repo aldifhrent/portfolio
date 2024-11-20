@@ -13,7 +13,6 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 const Menu = () => {
-  const controls = useAnimation();
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -57,7 +56,7 @@ const Menu = () => {
           >
             <Link
               href="/Aldi-CV.pdf"
-              className="p-2 flex items-center hover:underline space-x-1 hover:bg-gray-700 black  rounded-full"
+              className="p-2 flex items-center hover:underline space-x-1 hover:bg-gray-700 text-black dark:text-white hover:text-white rounded-full gap-2"
             >
               <Download className="size-5" />
             </Link>

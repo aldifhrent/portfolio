@@ -22,12 +22,13 @@ const projectsData = [
     repository: "https://github.com/aldifhrent/interior-slicing",
   },
 ];
+
 export default function Projects() {
   return (
     <section className="mt-12 " id="projects">
       <div className="container mx-auto justify-center flex flex-col">
-        <h1 className="text-md font-semibold  text-white p-[2px] rounded-xs  dark:text-white w-fit">
-          My Projects
+        <h1 className="text-md font-semibold   p-[2px] rounded-xs  w-fit">
+          my projects
         </h1>
         <div className="grid grid-cols-2 gap-8 mt-4">
           {projectsData.map((project, index) => (
@@ -85,7 +86,7 @@ function ProjectCard({
   image,
 }: ProjectProps) {
   return (
-    <Card className="relative flex w-fit shadow-lg bg-white dark:bg-black dark:border-white border-[2px]">
+    <Card className="relative flex w-[300px] shadow-lg bg-white dark:bg-black dark:border-white border-[2px]">
       {/* Clone Effect */}
       <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 border border-white opacity-40 rounded-lg"></div>
 
@@ -93,23 +94,23 @@ function ProjectCard({
         <Image src={image} alt={`${title} Project`} className="w-full" />
         <div className="p-4">
           <h1 className="text-lg font-bold">{title}</h1>
-          <p className="text-sm text-muted-foreground text-justify">
+          <p className="text-sm text-muted-foreground text-justify mt-2">
             {description}
           </p>
         </div>
         {techStack && (
-          <div className="flex flex-wrap gap-2 px-4 mb-2">
+          <div className="flex flex-wrap gap-2 px-4">
             {techStack.map((tech, index) => (
               <span
                 key={index}
-                className="px-2 py-1 text-xs font-semibold text-white bg-gray-800 rounded-md"
+                className="px-2 py-1 text-xs font-semibold text-white bg-black dark:bg-white dark:text-black rounded-md"
               >
                 {tech}
               </span>
             ))}
           </div>
         )}
-        <div className="flex items-center gap-x-4 justify-center mb-4">
+        <div className="flex items-center gap-x-4 justify-center p-4 ">
           <Link
             target="_blank"
             href={websiteLink || ""}
