@@ -4,8 +4,8 @@ export default function Footer() {
       <div className="container mx-auto">
         <hr className="text-black dark:text-white w-full border-black dark:border-white" />
         <div className="flex flex-col md:flex-row justify-between mt-4 mb-4 text-nowrap">
-          <h1>© 2024 - Aldi Ahmad Fahrizi Ilmawan</h1>
           <p className="hover:underline hover:cursor-pointer">Privacy Policy</p>
+          <h1>© 2024 - Aldi Ahmad Fahrizi Ilmawan</h1>
         </div>
       </div>
     </footer>

@@ -6,10 +6,8 @@ import { Card } from "./ui/card";
 import Image, { StaticImageData } from "next/image";
 import { Github } from "lucide-react";
 import { BiWorld } from "react-icons/bi";
-import placeHolder from "@/assets/placeholder.svg";
-
-// Projects
 import interno from "@/assets/projects/interno.png";
+
 const projectsData = [
   {
     title: "Interior Landing Page Slicing",
@@ -18,7 +16,7 @@ const projectsData = [
     description:
       "slicing interior landing page designs and designs obtained from the figma community using nextjs, tailwindcss",
     websiteLink: "https://interior-slicing.vercel.app",
-    techStack: ["NextJS", "TailwindCSS", "MagicUI", "ShadcnUI"],
+    techStack: ["Next.js", "Tailwind CSS", "Magic UI", "Shadcn UI"],
     repository: "https://github.com/aldifhrent/interior-slicing",
   },
 ];
@@ -110,23 +108,31 @@ function ProjectCard({
             ))}
           </div>
         )}
-        <div className="flex items-center gap-x-4 justify-center p-4 ">
+        <div className="flex items-center gap-x-4 justify-center p-4  ">
           <Link
             target="_blank"
             href={websiteLink || ""}
-            className="mt-2 text-md hover:underline hover:cursor-pointer text-nowrap font-bold"
+            className="mt-2 text-md hover:underline hover:cursor-pointer text-nowrap font-bold hover:underline-offset-2"
           >
-            <div className="flex gap-1 p-1 rounded-lg items-center">
-              <BiWorld size={20} /> Website
+            <div className="flex gap-2 p-1 rounded-lg items-center">
+              <BiWorld
+                size={20}
+                className="bg-black p-1 text-white rounded-lg dark:bg-white dark:text-black"
+              />{" "}
+              Website
             </div>
           </Link>
           <Link
             target="_blank"
             href={repository || ""}
-            className="mt-2 text-md hover:underline hover:cursor-pointer font-bold"
+            className="mt-2 text-md hover:underline hover:cursor-pointer font-bold hover:underline-offset-2"
           >
             <div className="flex gap-1 p-1 rounded-lg items-center">
-              <Github size={20} /> Repository
+              <Github
+                size={20}
+                className="bg-black p-1 text-white rounded-lg darl:bg-white dark:text-black"
+              />{" "}
+              Repository
             </div>
           </Link>
         </div>

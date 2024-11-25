@@ -19,7 +19,7 @@ export default function Profile() {
             functional websites.
           </p>
           <div className="flex flex-col md:flex-row  items-start gap-4 mt-4">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2">
               <div className="bg-green-300 size-2 rounded-full animate-blink"></div>
               <span>available for work</span>
             </div>

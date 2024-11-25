@@ -25,7 +25,7 @@ export default function Contacts() {
   return (
     <section className="mt-12" id="contact">
       <div className="container mx-auto">
-        <h1 className="text-lg font-bold p-[2px] rounded-xs  w-fit">
+        <h1 className="text-md font-bold p-[2px] rounded-xs  w-fit">
           contact me
         </h1>
         <div className="flex flex-col mt-4 gap-4">
