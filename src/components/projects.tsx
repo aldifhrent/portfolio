@@ -130,7 +130,7 @@ function ProjectCard({
             <div className="flex gap-1 p-1 rounded-lg items-center">
               <Github
                 size={20}
-                className="bg-black p-1 text-white rounded-lg darl:bg-white dark:text-black"
+                className="bg-black p-1 text-white rounded-lg dark:bg-white dark:text-black"
               />{" "}
               Repository
             </div>
