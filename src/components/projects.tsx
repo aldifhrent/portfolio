@@ -7,6 +7,7 @@ import Image, { StaticImageData } from "next/image";
 import { Github } from "lucide-react";
 import { BiWorld } from "react-icons/bi";
 import interno from "@/assets/projects/interno.png";
+import { useEffect } from "react";
 
 const projectsData = [
   {
@@ -50,7 +51,6 @@ export default function Projects() {
             >
               <ProjectCard
                 title={project.title}
-                date={project.date}
                 description={project.description}
                 websiteLink={project.websiteLink}
                 repository={project.repository}
@@ -67,7 +67,6 @@ export default function Projects() {
 
 interface ProjectProps {
   title: string;
-  date: number;
   description?: string;
   websiteLink?: string;
   repository?: string;
@@ -76,7 +75,6 @@ interface ProjectProps {
 }
 function ProjectCard({
   title,
-  date,
   description,
   websiteLink,
   repository,
@@ -89,9 +87,11 @@ function ProjectCard({
       <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 border border-white opacity-40 rounded-lg"></div>
 
       <div className="flex flex-col gap-4">
-        <Image src={image} alt={`${title} Project`} className="w-full" />
+        <Link href={websiteLink || ""} target="_blank">
+          <Image src={image} alt={`${title} Project`} className="w-full" />
+        </Link>
         <div className="p-4">
-          <h1 className="text-lg font-bold">{title}</h1>
+          <h1 className="text-lg font-bold -mt-2">{title}</h1>
           <p className="text-sm text-muted-foreground text-justify mt-2">
             {description}
           </p>
@@ -109,19 +109,6 @@ function ProjectCard({
           </div>
         )}
         <div className="flex items-center gap-x-4 justify-center p-4  ">
-          <Link
-            target="_blank"
-            href={websiteLink || ""}
-            className="mt-2 text-md hover:underline hover:cursor-pointer text-nowrap font-bold hover:underline-offset-2"
-          >
-            <div className="flex gap-2 p-1 rounded-lg items-center">
-              <BiWorld
-                size={20}
-                className="bg-black p-1 text-white rounded-lg dark:bg-white dark:text-black"
-              />{" "}
-              Website
-            </div>
-          </Link>
           <Link
             target="_blank"
             href={repository || ""}
