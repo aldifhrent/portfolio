@@ -6,21 +6,11 @@ import { Card } from "./ui/card";
 import Image, { StaticImageData } from "next/image";
 import { Github } from "lucide-react";
 import { BiWorld } from "react-icons/bi";
-import interno from "@/assets/projects/interno.png";
-import { useEffect } from "react";
 
-const projectsData = [
-  {
-    title: "Interior Landing Page Slicing",
-    image: interno,
-    date: 2024,
-    description:
-      "slicing interior landing page designs and designs obtained from the figma community using nextjs, tailwindcss",
-    websiteLink: "https://interior-slicing.vercel.app",
-    techStack: ["Next.js", "Tailwind CSS", "Magic UI", "Shadcn UI"],
-    repository: "https://github.com/aldifhrent/interior-slicing",
-  },
-];
+import { useEffect } from "react";
+import { projectsData } from "@/consts";
+
+
 
 export default function Projects() {
   return (
