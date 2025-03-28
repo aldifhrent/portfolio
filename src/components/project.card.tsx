@@ -8,6 +8,7 @@ interface ProjectProps {
   websiteLink?: string;
   repository?: string;
   techStack: string[];
+  type?: string;
   statusWebsite?: boolean;
   image: StaticImageData | string;
 }
@@ -17,29 +18,27 @@ export default function ProjectCard({
   description,
   websiteLink,
   techStack,
+  type,
   statusWebsite,
   image,
 }: ProjectProps) {
   return (
-    <Card className="relative flex flex-col w-full max-w-sm mx-auto shadow-lg bg-white dark:bg-black dark:border-white border-[2px] h-full rounded-lg z-2">
+    <Card className="relative flex flex-col max-w-md h-full mx-auto shadow-lg bg-white dark:bg-black dark:border-white border-[2px]  rounded-lg z-2">
       {/* Clone Effect */}
       <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 border border-black dark:border-white rounded-lg opacity-30 bg-black dark:bg-white"></div>
 
       <div className="flex flex-col gap-4">
-        {websiteLink && (
-          <Link href={statusWebsite === true ? websiteLink : ''} target="_blank">
-            <Image
+      <Image
               src={image}
               alt={`${title} Project`}
               className="w-full h-auto rounded-t-lg"
               width={300}
               height={150}
             />
-          </Link>
-        )}
         <div className="p-4">
           <h1 className="text-lg font-bold -mt-2">{title}</h1>
-          <p className="text-sm text-muted-foreground mt-2">{description}</p>
+          <p className="bbg-black dark:bg-white text-black dark:text-black w-fit px-1 mt-3">{type}</p>
+          <p className="text-sm text-muted-foreground mt-4">{description}</p>
         </div>
         {techStack.length > 0 && (
           <div className="flex flex-wrap gap-2 px-4">

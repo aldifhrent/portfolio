@@ -13,14 +13,14 @@ export default function Projects() {
   return (
     <section className="mt-12" id="projects">
       <div className="container mx-auto flex flex-col justify-center">
-        <h1 className="text-md font-semibold p-[2px] rounded-xs w-fit">
-          My Projects
-        </h1>
+        <Link href='/projects' className="text-md font-semibold p-[2px] hover:underline hover:underline-offset-4">
+          my Projects
+        </Link>
 
         {/* Grid dengan jarak antar item */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-8">
-          {displayedProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mt-8">
+          {displayedProjects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
         {projectsData.length > 3 && (
