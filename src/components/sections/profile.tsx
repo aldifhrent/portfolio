@@ -1,6 +1,6 @@
 import { FaLocationDot } from "react-icons/fa6";
-import HyperText from "./magicui/hyper-text";
-import TopMenu from "./menu";
+import HyperText from "../magicui/hyper-text";
+import TopMenu from "../menu";
 export default function Profile() {
   return (
     <section>

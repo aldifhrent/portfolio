@@ -1,5 +1,5 @@
 import React from "react";
-import StudyCard from "./study.card";
+import StudyCard from "../study.card";
 
 export const study = [
     {

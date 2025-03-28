@@ -13,7 +13,7 @@ const config: Config = {
         padding: {
           sm: "1rem",
           md: "2rem",
-          xl: "20rem",
+          xl: "15rem",
         },
       },
       colors: {

@@ -1,9 +1,10 @@
-import Contacts from "@/components/contacts";
-import Footer from "@/components/footer";
-import Profile from "@/components/profile";
-import Projects from "@/components/projects";
-import Study from "@/components/study";
-import WorkExperience from "@/components/workexperience";
+import Contacts from "@/components/sections/contacts";
+import Footer from "@/components/sections/footer";
+import Profile from "@/components/sections/profile";
+import Projects from "@/components/sections/projects";
+import Study from "@/components/sections/study";
+import WorkExperience from "@/components/sections/workexperience";
+
 
 export default function Home() {
   return (
