@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import Marquee from "./ui/marquee";
 import Image, { StaticImageData } from "next/image";
+import Marquee from "../ui/marquee";
 
 const skills = [
   "javascript",

@@ -18,7 +18,7 @@ export default function Projects() {
         </h1>
 
         {/* Grid dengan jarak antar item */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-8">
           {displayedProjects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
