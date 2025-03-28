@@ -29,15 +29,15 @@ const Menu = () => {
 
   return (
     <section className="mt-12 max-w-screen">
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <motion.div
-          className="flex justify-between items-center"
+          className="flex justify-between items-center border rounded-full dark:border-white px-4" 
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           <motion.button
-            whileHover={{ scale: 1.1 }}
+    
             whileTap={{ scale: 0.95 }}
             onClick={handleTheme}
             aria-label="Toggle theme"
@@ -50,7 +50,7 @@ const Menu = () => {
             )}
           </motion.button>
           <motion.button
-            whileHover={{ scale: 1.1 }}
+
             whileTap={{ scale: 0.95 }}
             className="flex items-center hover:font-semibold hover:underline cursor-pointer"
           >
