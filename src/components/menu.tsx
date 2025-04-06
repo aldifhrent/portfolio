@@ -34,7 +34,7 @@ const Menu = () => {
             whileTap={{ scale: 0.95 }}
             onClick={handleTheme}
             aria-label="Toggle theme"
-            className="p-2 rounded-full hover:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none relative"
+            className="p-2 rounded-full hover:bg-gray-500 dark:hover:bg-gray-700 focus:outline-none relative"
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -58,7 +58,7 @@ const Menu = () => {
           >
             <Link
               href="/Aldi-CV.pdf"
-              className="p-2 flex items-center hover:underline space-x-1 hover:bg-gray-700 text-black dark:text-white hover:text-white rounded-full gap-2"
+              className="p-2 flex items-center hover:underline space-x-1 hover:bg-gray-500 text-black dark:text-white hover:text-white rounded-full gap-2"
             >
               <Download className="size-5" />
             </Link>

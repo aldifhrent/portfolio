@@ -7,14 +7,13 @@ import Link from "next/link";
 export default function Contacts() {
   const { toast } = useToast();
 
-  const handleCopy = () => {
-    const email = "aldiahmadfahriziilmawan@gmail.com";
+  const handleCopy = (value: string) => {
     navigator.clipboard
-      .writeText(email)
+      .writeText(value)
       .then(() => {
         toast({
           title: "Copied to clipboard",
-          description: email,
+          description: value,
         });
       })
       .catch((err) => {
@@ -22,6 +21,60 @@ export default function Contacts() {
       });
   };
 
+  const contacts = [
+    {
+      type: "Phone Number",
+      value: "+6285818718161",
+      action: (value: string) => (
+        <span
+          className="flex items-center pl-4 hover:cursor-pointer hover:underline hover:underline-offset-4"
+          onClick={() => handleCopy(value)}
+        >
+          {value} <ChevronRight />
+        </span>
+      ),
+    },
+    {
+      type: "Email",
+      value: "aldiahmadfahriziilmawan@gmail.com",
+      action: (value: string) => (
+        <span
+          className="flex items-center pl-4 hover:cursor-pointer hover:underline hover:underline-offset-4"
+          onClick={() => handleCopy(value)}
+        >
+          {value} <ChevronRight />
+        </span>
+      ),
+    },
+    {
+      type: "Linkedin",
+      value: "Aldi Ahmad Fahrizi Ilmawan",
+      action: (value: string) => (
+        <Link
+          href="https://www.linkedin.com/in/aldiahmadfahriziilmawan/"
+          target="_blank"
+          className="flex items-center pl-4 hover:underline hover:underline-offset-4"
+        >
+          {value} <ChevronRight />
+        </Link>
+      ),
+    },
+    {
+      type: "Github",
+      value: "@aldifhrent",
+      action: (value: string) => (
+        <Link
+          href="https://github.com/aldifhrent"
+          target="_blank"
+          className="flex items-center pl-4 hover:underline hover:underline-offset-4"
+        >
+          {value} <ChevronRight />
+        </Link>
+      ),
+    },
+    
+    
+  ];
   return (
     <section className="mt-12" id="contact">
       <div className="container mx-auto">
@@ -29,38 +82,13 @@ export default function Contacts() {
           contact me
         </h1>
         <div className="flex flex-col mt-4 gap-4">
-          <div className="flex items-center">
-            <p className="flex-shrink-0">Email</p>
-            <hr className="flex-grow border-gray-300 mx-2" />
-            <p
-              className="flex items-center pl-4 hover:underline hover:cursor-pointer"
-              onClick={handleCopy}
-            >
-              aldiahmadfahriziilmawan@gmail.com <ChevronRight />
-            </p>
-          </div>
-          <div className="flex items-center">
-            <p className="flex-shrink-0">Github</p>
-            <hr className="flex-grow border-gray-300 mx-2" />
-            <Link
-              href="https://github.com/aldifhrent"
-              className="flex items-center pl-4 hover:underline"
-              target="_blank"
-            >
-              @aldifhrent <ChevronRight />
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <p className="flex-shrink-0">Linkedin</p>
-            <hr className="flex-grow border-gray-300 mx-2" />
-            <Link
-              href="https://www.linkedin.com/in/aldiahmadfahriziilmawan/"
-              className="flex items-center pl-4 hover:underline"
-              target="_blank"
-            >
-              @aldiahmadfahriziilmawan <ChevronRight />
-            </Link>
-          </div>
+          {contacts.map((contact, index) => (
+            <div className="flex items-center" key={index}>
+              <p className="flex-shrink-0">{contact.type}</p>
+              <hr className="flex-grow border-gray-300 mx-2" />
+              {contact.action(contact.value)}
+            </div>
+          ))}
         </div>
       </div>
     </section>

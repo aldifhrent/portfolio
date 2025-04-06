@@ -8,12 +8,12 @@ export default function Profile() {
       <div className="container mx-auto mt-8">
         <div className="flex flex-col">
           <HyperText
-            className="text-lg md:text-2xl xl:text-4xl  text-center mt-2  dark:text-white font-extrabold "
+            className="text-4xl md:text-2xl xl:text-4xl  text-center mt-2  dark:text-white font-extrabold "
             text="Aldi Ahmad Fahrizi Ilmawan"
             duration={900}
             animateOnLoad={true}
           />
-          <p className="text-md font-semibold">Full Stack Web Developer</p>
+          <p className="text-lg font-semibold">Full Stack Web Developer</p>
           <p className="mt-4 text-sm md:text-md">
             Just a man who loves turning lines of code into stunning and
             functional websites.

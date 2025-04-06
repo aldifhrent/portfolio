@@ -1,32 +1,52 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Card } from "../ui/card";
-import Image, { StaticImageData } from "next/image";
-import { Github } from "lucide-react";
 import { projectsData } from "@/consts";
 import ProjectCard from "../project.card";
 
+const categories = ["All", "Front End", "Back End", "Full Stack"];
+
 export default function Projects() {
-  const displayedProjects = projectsData.slice(0, 3); // Tampilkan 3 proyek pertama
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProjects = projectsData.filter((project) =>
+    selectedCategory === "All" ? true : project.type === selectedCategory
+  );
 
   return (
     <section className="mt-12" id="projects">
       <div className="container mx-auto flex flex-col justify-center">
-        <Link href='/projects' className="text-md font-semibold p-[2px] hover:underline hover:underline-offset-4">
+        <Link href="/projects" className="text-md font-semibold p-[2px] hover:underline hover:underline-offset-4">
           my Projects
         </Link>
 
-        {/* Grid dengan jarak antar item */}
+        {/* Filter Buttons */}
+        <div className="flex gap-4 mt-4">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
+                selectedCategory === category ? "bg-black text-white dark:bg-white dark:text-black" : "bg-gray-200 dark:bg-gray-700"
+              }`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid dengan filter */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mt-8">
-          {displayedProjects.map((project) => (
+          {filteredProjects.slice(0, 3).map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
-        {projectsData.length > 3 && (
+
+        {filteredProjects.length > 3 && (
           <Link
-          href="/projects"
-            className="mt-8  bg-black text-white dark:bg-white dark:text-black px-6 py-2 rounded-lg font-semibold w-fit text-center"
+            href="/projects"
+            className="mt-8 bg-black text-white dark:bg-white dark:text-black px-6 py-2 rounded-lg font-semibold w-fit text-center"
           >
             Check Other Projects
           </Link>
@@ -35,4 +55,3 @@ export default function Projects() {
     </section>
   );
 }
-

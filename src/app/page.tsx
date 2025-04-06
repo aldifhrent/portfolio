@@ -8,7 +8,7 @@ import WorkExperience from "@/components/sections/workexperience";
 
 export default function Home() {
   return (
-    <main>
+    <main className="">
       <Profile />
       <Study/>
       <WorkExperience />
