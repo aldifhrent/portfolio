@@ -6,18 +6,16 @@ import { projectsData } from "@/consts";
 import Profile from "@/components/sections/profile";
 import Footer from "@/components/sections/footer";
 import {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-  } from "@/components/ui/pagination"
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import Contacts from "@/components/sections/contacts";
-  
 
-  
 const categories = ["All", "Front End", "Back End", "Full Stack"];
 const ITEMS_PER_PAGE = 6;
 
@@ -33,7 +31,7 @@ export default function Projects() {
   // Calculate pagination values
   const totalProjects = filteredProjects.length;
   const totalPages = Math.ceil(totalProjects / ITEMS_PER_PAGE);
-  
+
   // Get current page projects
   const currentProjects = filteredProjects.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
@@ -44,7 +42,9 @@ export default function Projects() {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     // Scroll to top of projects section
-    document.getElementById("projects-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById("projects-grid")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   // Reset to first page when changing filter
@@ -55,7 +55,6 @@ export default function Projects() {
 
   return (
     <section id="projects" className="min-h-screen py-16">
-     
       <div className="container mx-auto px-4 mt-20">
         <h2 className="text-3xl font-bold text-center mb-8">My Projects</h2>
 
@@ -64,12 +63,12 @@ export default function Projects() {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => handleFilterChange(category)}
-              className={`px-4 py-2 rounded-md transition-all ${
+              className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
                 selectedType === category
-                  ? "bg-orange-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+                  ? "bg-black text-white dark:bg-white dark:text-black"
+                  : "bg-gray-200 dark:bg-gray-700"
               }`}
+              onClick={() => setSelectedType(category)}
             >
               {category}
             </button>
@@ -79,7 +78,10 @@ export default function Projects() {
         {/* Projects grid or empty state */}
         {filteredProjects.length > 0 ? (
           <>
-            <div id="projects-grid" className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div
+              id="projects-grid"
+              className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+            >
               {currentProjects.map((project, index) => (
                 <div
                   key={index}
@@ -147,14 +149,12 @@ export default function Projects() {
                       ) : (
                         <span className="text-gray-400">Under Development</span>
                       )}
-
-                     
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            
+
             {/* Pagination */}
             {totalPages > 1 && (
               <div className="mt-12">
@@ -162,30 +162,45 @@ export default function Projects() {
                   <PaginationContent>
                     {/* Previous button */}
                     <PaginationItem>
-                      <PaginationPrevious 
-                        onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
-                        className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      <PaginationPrevious
+                        onClick={() =>
+                          currentPage > 1 && handlePageChange(currentPage - 1)
+                        }
+                        className={
+                          currentPage === 1
+                            ? "pointer-events-none opacity-50"
+                            : "cursor-pointer"
+                        }
                       />
                     </PaginationItem>
-                    
+
                     {/* Page numbers */}
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                      <PaginationItem key={page}>
-                        <PaginationLink
-                          onClick={() => handlePageChange(page)}
-                          isActive={currentPage === page}
-                          className="cursor-pointer"
-                        >
-                          {page}
-                        </PaginationLink>
-                      </PaginationItem>
-                    ))}
-                    
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                      (page) => (
+                        <PaginationItem key={page}>
+                          <PaginationLink
+                            onClick={() => handlePageChange(page)}
+                            isActive={currentPage === page}
+                            className="cursor-pointer"
+                          >
+                            {page}
+                          </PaginationLink>
+                        </PaginationItem>
+                      )
+                    )}
+
                     {/* Next button */}
                     <PaginationItem>
-                      <PaginationNext 
-                        onClick={() => currentPage < totalPages && handlePageChange(currentPage + 1)}
-                        className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      <PaginationNext
+                        onClick={() =>
+                          currentPage < totalPages &&
+                          handlePageChange(currentPage + 1)
+                        }
+                        className={
+                          currentPage === totalPages
+                            ? "pointer-events-none opacity-50"
+                            : "cursor-pointer"
+                        }
                       />
                     </PaginationItem>
                   </PaginationContent>
@@ -196,15 +211,18 @@ export default function Projects() {
         ) : (
           <div className="flex flex-col items-center justify-center py-16 mt-20">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-medium text-gray-700 mb-2">No projects found</h3>
+            <h3 className="text-2xl font-medium text-gray-700 mb-2">
+              No projects found
+            </h3>
             <p className="text-gray-500">
-              No projects match the selected filter. Try selecting a different category.
+              No projects match the selected filter. Try selecting a different
+              category.
             </p>
           </div>
         )}
       </div>
-      <Contacts/>
-      <Footer/>
+      <Contacts />
+      <Footer />
     </section>
   );
 }
