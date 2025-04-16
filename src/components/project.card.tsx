@@ -9,6 +9,7 @@ interface ProjectProps {
   repository?: string;
   techStack: string[];
   type?: string;
+  category?: string;
   statusWebsite?: boolean;
   image: StaticImageData | string;
 }
@@ -19,6 +20,7 @@ export default function ProjectCard({
   websiteLink,
   techStack,
   type,
+  category,
   statusWebsite,
   image,
 }: ProjectProps) {
@@ -41,7 +43,7 @@ export default function ProjectCard({
         <div className="p-4 flex-grow">
           <h1 className="text-lg font-bold">{title}</h1>
           <p className="font-bold bg-black text-white dark:bg-white dark:text-black w-fit px-2 py-1 mt-3 rounded-sm">
-            {type}
+            {category}
           </p>
           <p className="text-sm text-muted-foreground mt-4 min-h-[100px]">
             {description}

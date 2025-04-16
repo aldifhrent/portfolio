@@ -8,10 +8,10 @@ import ProjectCard from "../project.card";
 const categories = ["All", "Front End", "Back End", "Full Stack"];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedType, setSelectedType] = useState("All");
 
   const filteredProjects = projectsData.filter((project) =>
-    selectedCategory === "All" ? true : project.type === selectedCategory
+    selectedType === "All" ? true : project.type === selectedType
   );
 
   return (
@@ -27,9 +27,9 @@ export default function Projects() {
             <button
               key={category}
               className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
-                selectedCategory === category ? "bg-black text-white dark:bg-white dark:text-black" : "bg-gray-200 dark:bg-gray-700"
+                selectedType === category ? "bg-black text-white dark:bg-white dark:text-black" : "bg-gray-200 dark:bg-gray-700"
               }`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => setSelectedType(category)}
             >
               {category}
             </button>
