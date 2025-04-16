@@ -211,10 +211,10 @@ export default function Projects() {
         ) : (
           <div className="flex flex-col items-center justify-center py-16 mt-20">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-medium text-gray-700 mb-2">
+            <h3 className="text-2xl font-medium text-gray-700 dark:text-white mb-2">
               No projects found
             </h3>
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-white">
               No projects match the selected filter. Try selecting a different
               category.
             </p>
