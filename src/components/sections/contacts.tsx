@@ -24,14 +24,15 @@ export default function Contacts() {
   const contacts = [
     {
       type: "Phone Number",
-      value: "+6285818718161",
+      value: "+6282218718161",
       action: (value: string) => (
-        <span
-          className="flex items-center pl-4 hover:cursor-pointer hover:underline hover:underline-offset-4"
-          onClick={() => handleCopy(value)}
+        <Link
+          href="http://wa.me/+6282218718161"
+          target="_blank"
+          className="flex items-center pl-4 hover:underline hover:underline-offset-4"
         >
           {value} <ChevronRight />
-        </span>
+        </Link>
       ),
     },
     {

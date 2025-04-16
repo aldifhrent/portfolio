@@ -48,7 +48,7 @@ export default function Projects() {
             href="/projects"
             className="mt-8 bg-black text-white dark:bg-white dark:text-black px-6 py-2 rounded-lg font-semibold w-fit text-center"
           >
-            Check Other Projects
+            Other Projects
           </Link>
         )}
       </div>
