@@ -99,13 +99,6 @@ export const workExperiences = [
     startDate: "Aug 2022",
     endDate: "Sep 2022",
   },
-  {
-    id: 2,
-    company: "Contoh Perusahaan",
-    position: "Frontend Developer",
-    startDate: "Jan 2023",
-    endDate: "Jun 2023",
-  },
 ];
 
 export const study = [
