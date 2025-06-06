@@ -1,17 +1,7 @@
 import interno from "@/assets/projects/interno.png";
-export type Project = {
-  title: string;
-  image: any; // bisa diperjelas kalau kamu tahu tipenya
-  date: number;
-  testType: string;
-  description: string;
-  techStack: string[];
-  statusWebsite: boolean;
-  websiteLink: string;
-  repository: string;
-};
+import { ProjectProps } from "./components/project.card";
 
-export const projectsData: Project[] = [
+export const projectsData: ProjectProps[] = [
 
 ];
 
