@@ -2,14 +2,13 @@ import Link from "next/link";
 import { Card } from "./ui/card";
 import Image, { StaticImageData } from "next/image";
 
-interface ProjectProps {
+export interface ProjectProps {
   title: string;
   description?: string;
   websiteLink?: string;
   repository?: string;
-  techStack: string[];
-  type?: string;
-  category?: string;
+  techStack: string[]; // Tools untuk QA
+  testType?: string;
   statusWebsite?: boolean;
   image: StaticImageData | string;
 }
@@ -19,8 +18,7 @@ export default function ProjectCard({
   description,
   websiteLink,
   techStack,
-  type,
-  category,
+  testType,
   statusWebsite,
   image,
 }: ProjectProps) {
@@ -29,7 +27,7 @@ export default function ProjectCard({
       {/* Clone Effect */}
       <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 border border-black dark:border-white rounded-lg opacity-30 bg-black dark:bg-white"></div>
 
-      {/* Container utama dengan flex dan justify-between */}
+      {/* Container utama */}
       <div className="flex flex-col justify-between h-full">
         <Image
           src={image}
@@ -39,26 +37,28 @@ export default function ProjectCard({
           className="w-full"
         />
 
-        {/* Bagian Konten */}
+        {/* Konten */}
         <div className="p-4 flex-grow">
           <h1 className="text-lg font-bold">{title}</h1>
-          <p className="font-bold bg-black text-white dark:bg-white dark:text-black w-fit px-2 py-1 mt-3 rounded-sm">
-            {category}
-          </p>
+          {testType && (
+            <p className="font-bold bg-black text-white dark:bg-white dark:text-black w-fit px-2 py-1 mt-3 rounded-sm">
+              {testType}
+            </p>
+          )}
           <p className="text-sm text-muted-foreground mt-4 min-h-[100px]">
             {description}
           </p>
         </div>
 
-        {/* Tech Stack */}
+        {/* Tools */}
         {techStack.length > 0 && (
           <div className="flex flex-wrap gap-2 px-4 min-h-[50px]">
-            {techStack.map((tech, index) => (
+            {techStack.map((tool, index) => (
               <span
                 key={index}
                 className="px-2 py-1 text-xs font-semibold text-white bg-black dark:bg-white dark:text-black rounded-md"
               >
-                {tech}
+                {tool}
               </span>
             ))}
           </div>

@@ -5,19 +5,22 @@ import Link from "next/link";
 import { projectsData } from "@/consts";
 import ProjectCard from "../project.card";
 
-const categories = ["All", "Front End", "Back End", "Full Stack"];
+const categories = ["All", "Manual Testing", "Automatic Testing"];
 
 export default function Projects() {
   const [selectedType, setSelectedType] = useState("All");
 
   const filteredProjects = projectsData.filter((project) =>
-    selectedType === "All" ? true : project.type === selectedType
+    selectedType === "All" ? true : project.techStack.includes(selectedType)
   );
 
   return (
     <section className="mt-12" id="projects">
       <div className="container mx-auto flex flex-col justify-center">
-        <Link href="/projects" className="text-md font-semibold p-[2px] hover:underline hover:underline-offset-4">
+        <Link
+          href="/projects"
+          className="text-md font-semibold p-[2px] hover:underline hover:underline-offset-4"
+        >
           my Projects
         </Link>
 
@@ -27,7 +30,9 @@ export default function Projects() {
             <button
               key={category}
               className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
-                selectedType === category ? "bg-black text-white dark:bg-white dark:text-black" : "bg-gray-200 dark:bg-gray-700"
+                selectedType === category
+                  ? "bg-black text-white dark:bg-white dark:text-black"
+                  : "bg-gray-200 dark:bg-gray-700"
               }`}
               onClick={() => setSelectedType(category)}
             >
@@ -38,9 +43,17 @@ export default function Projects() {
 
         {/* Grid dengan filter */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mt-8">
-          {filteredProjects.slice(0, 3).map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
+          {filteredProjects.length === 0 ? (
+            <p className="text-center col-span-full text-gray-500 text-lg font-semibold">
+              Coming Soon
+            </p>
+          ) : (
+            filteredProjects
+              .slice(0, 3)
+              .map((project) => (
+                <ProjectCard key={project.title} {...project} />
+              ))
+          )}
         </div>
 
         {filteredProjects.length > 3 && (
