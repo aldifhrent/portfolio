@@ -21,7 +21,7 @@ export default function Projects() {
           href="/projects"
           className="text-md font-semibold p-[2px] hover:underline hover:underline-offset-4"
         >
-          my Projects
+          my projects
         </Link>
 
         {/* Filter Buttons */}
