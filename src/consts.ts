@@ -10,6 +10,7 @@ export type Project = {
   websiteLink: string;
   repository: string;
 };
+
 export const projectsData: Project[] = [
 
 ];
