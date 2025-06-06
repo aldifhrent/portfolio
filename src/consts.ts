@@ -1,5 +1,5 @@
 import interno from "@/assets/projects/interno.png";
-type Project = {
+export type Project = {
   title: string;
   image: any; // bisa diperjelas kalau kamu tahu tipenya
   date: number;
