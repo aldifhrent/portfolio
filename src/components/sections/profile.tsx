@@ -24,8 +24,8 @@ export default function Profile() {
 
           <div className="flex flex-col md:flex-row  gap-4 mt-4 text-sm">
             <div className="flex items-center gap-2">
-              <div className="bg-green-400 size-2 rounded-full animate-blink"></div>
-              <span>Available for work</span>
+              <div className="bg-green-600 size-2 rounded-full animate-blink"></div>
+              <span>available for work</span>
             </div>
             <div className="flex items-center gap-2">
               <FaLocationDot className="text-lg" />
