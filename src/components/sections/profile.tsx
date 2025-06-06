@@ -19,7 +19,7 @@ export default function Profile() {
           </p>
 
           <p className="mt-4 text-sm md:text-md text-justify max-w-2xl  text-gray-600 dark:text-gray-300">
-            I’m passionate about ensuring product quality through detail-oriented testing and a proactive mindset. I focus on preventing bugs before they happen—so users never have to see them.
+            I catch bugs before they catch users.
           </p>
 
           <div className="flex flex-col md:flex-row  gap-4 mt-4 text-sm">
